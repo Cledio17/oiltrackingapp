@@ -29,7 +29,7 @@ class OilController extends Controller
         if ($request->hasFile('oil_receipt')) {
             $file = $request->file('oil_receipt');
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $filePath = storage_path('app/public/recordings/' . $filename);
+            $filePath = storage_path('app/public/images/' . $filename);
 
             // Save the file to the specified path
             file_put_contents($filePath, $file);
@@ -44,7 +44,7 @@ class OilController extends Controller
             $user->oils()->save($oil);
         }
 
-        return response()->json(['message' => 'success', 'file_path' => $path], 201);
+        return response()->json(['message' => 'success'], 201);
     }
 
     public function users()
