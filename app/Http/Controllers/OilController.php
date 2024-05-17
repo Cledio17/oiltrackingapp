@@ -29,7 +29,7 @@ class OilController extends Controller
         if ($request->hasFile('oil_receipt')) {
             $file = $request->file('oil_receipt');
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/images', $filename);
+            $path = $file->storeAs('public/images', $filename); // Store in storage/app/public/images
 
             $user = Auth::user();
 
@@ -41,7 +41,7 @@ class OilController extends Controller
             $user->oils()->save($oil);
         }
 
-        return response()->json(['message' => 'success'], 201);
+        return response()->json(['message' => 'success', 'file_path' => $path], 201);
     }
 
     public function users()
