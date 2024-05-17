@@ -29,7 +29,7 @@ class OilController extends Controller
         if ($request->hasFile('oil_receipt')) {
             $file = $request->file('oil_receipt');
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->move('images/', $filename);
+            $file->storeAs('public/images', $filename);
 
             $user = Auth::user();
 
