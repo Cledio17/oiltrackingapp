@@ -22,7 +22,7 @@ class OilRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'car_plate' => 'required|string|min:6|regex:/^[A-Z]{3}-[0-9]{4}$/',
+            'car_plate' => 'required|string|regex:/^[a-zA-Z]+-[0-9]+$/',
             'oil_receipt' => 'required|image|mimes:jpeg,png,jpg',
             'location' => 'required|string',
         ];
