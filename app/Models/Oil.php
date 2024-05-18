@@ -14,6 +14,7 @@ class Oil extends Model
         'user_id',
         'oil_receipt',
         'car_plate',
+        'location',
     ];
 
     public function user(): BelongsTo

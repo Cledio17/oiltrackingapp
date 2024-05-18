@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('oil_receipt');
             $table->string('car_plate');
+            $table->string('location');
 
             $table->foreign('user_id')->references('id')->on('users');
 

@@ -24,6 +24,7 @@ class OilRequest extends FormRequest
         return [
             'car_plate' => 'required|string|min:6|regex:/^[A-Z]{3}-[0-9]{4}$/',
             'oil_receipt' => 'required|image|mimes:jpeg,png,jpg',
+            'location' => 'required|string',
         ];
     }
 }
